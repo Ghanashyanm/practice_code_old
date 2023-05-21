@@ -1,0 +1,20 @@
+access modifier
+
+class
+	public : accessable anywhere
+	final : cant be extend
+	abstract : access by only extend/Inherit
+	
+method
+	public : accessable anywhere
+	private : class scope 
+	final : cant be extend by inherit
+	abstract : only in abstract class
+	static : only run with static variable
+	
+	
+variable 
+	static : only use in static method
+	private : scope in defined parenthisis
+	public : use anywhere
+	final : cannot chnge/increament/decrement to final variable

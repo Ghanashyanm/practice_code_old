@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="VO.RegVO" table="Reg_tbl">
+	
+		<id name="id" type="int" column="id">
+			<generator class="increment"/>
+		</id>
+		
+		<property name="fn">
+			<column name="first_name"/>
+		</property>
+		
+		<property name="ln">
+			<column name="last_name"/>
+		</property>
+		
+		<many-to-one name="loginVO" class="VO.LoginVO" column="loginId">
+		</many-to-one>
+		
+		
+	</class>
+</hibernate-mapping>

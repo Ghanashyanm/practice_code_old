@@ -7,55 +7,43 @@ import javax.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.demo.dao.Countrydao;
-import com.demo.dao.Statedao;
-import com.demo.model.Countryvo;
-import com.demo.model.Statevo;
+import com.demo.dao.Logindao;
+import com.demo.dao.Regdao;
+import com.demo.model.Loginvo;
+import com.demo.model.Regvo;
 
 @Service
 @Transactional
-public class RegisterServiceImpl implements RegisterService {
+public class RegisterServiceImpl implements RegisterService{
 	
 	@Autowired
-	private Countrydao countrydao;
+	private Regdao regdao;
 	
 	@Autowired
-	private Statedao statedao;
-
+	private Logindao logindao;
 	
 	@Override
-	public void insertCountry(Countryvo countryvo) {
-		// TODO Auto-generated method stub
-		this.countrydao.insertCountry(countryvo);
-		
-	}
-
-	@Override
-	public List<Countryvo> searchCountry() {
-		// TODO Auto-generated method stub
-		return this.countrydao.searchCountry();
-	}
-	@Override
-	public List<Countryvo> getByIdCountry(int id) {
-		// TODO Auto-generated method stub
-		return this.countrydao.getByIdCounrty(id);
-	}
-	@Override
-	public void insertState(Statevo statevo) {
-		// TODO Auto-generated method stub
-		this.statedao.insertState(statevo);
-	}
-	@Override
-	public List<Statevo> searchState() {
-		// TODO Auto-generated method stub
-		return this.statedao.searchState();
-	}
-	@Override
-	public List<Statevo> getByIdState(int id) {
-		// TODO Auto-generated method stub
-		return this.statedao.getByIdState(id);
+	public void insert(Regvo regvo)
+	{
+		this.regdao.insert(regvo);
 	}
 	
+	@Override
+	public void insert(Loginvo loginvo)
+	{
+		this.logindao.insert(loginvo);
+	}
 	
+	@Override
+	public List<Regvo> search()
+	{
+		return this.regdao.search();
+	}
+	
+	@Override
+	public List<Regvo> getById(int id)
+	{
+		return this.regdao.getById(id);
+	}
 	
 }

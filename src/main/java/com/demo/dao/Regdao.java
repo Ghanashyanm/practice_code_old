@@ -1,18 +1,16 @@
-package com.demo.service;
+package com.demo.dao;
+
 
 import java.util.List;
 
-import com.demo.model.Loginvo;
 import com.demo.model.Regvo;
 
-public interface RegisterService {
+public interface Regdao {
+
 	void insert(Regvo regvo);
-	
-	void insert(Loginvo loginvo);
 	
 	List<Regvo> search();
 	
 	List<Regvo> getById(int id);
-
 	
 }
